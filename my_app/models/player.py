@@ -5,6 +5,14 @@
 
 from django.db import models
 
+class Position(models.TextChoices):
+    DEFENDER = 'defender', 'Defender'
+    MIDFIELDER = 'midfielder', 'Midfielder'
+    FORWARD = 'forward', 'Forward'
+
 class Player(models.Model):
-    name = models.CharField(max_length=64, blank=False, default='')
-    position = models.CharField(max_length=16, blank=False)
+    name = models.CharField(max_length=100)
+    position = models.CharField(max_length=20, choices=Position.choices)
+
+    def __str__(self):
+        return self.name
