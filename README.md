@@ -1,30 +1,27 @@
 # Player selection
 
 ## Build the solution
-This solution requires Python 3.10 and Poetry 1.1 installed.
-
-To build the solution just install the python dependencies
+Esta solución requiere Python 3.10 y Poetry 1.1 instalados. 
+Para construir la solución, simplemente instala las dependencias de Python: 
 ```shell
 poetry install
 ```
 
 ## Run solution locally
-To prepare the solution locally (migrate local databse - SQLite), run this command (need to be run only once).
+Para preparar la solución localmente (migrar la base de datos local - SQLite), ejecuta este comando (solo necesita ejecutarse una vez):
 ```shell
 poetry run python manage.py migrate my_app
 ```
 
-
-To run the solution locally (start server on port 3000) just run this command
+Para ejecutar la solución localmente (iniciar el servidor en el puerto 3000), simplemente ejecuta este comando:
 ```shell
 poetry run python manage.py runserver 3000
 ```
 
-Please ignore error messages about unapplying migrations from running the server. The project is initialized from Django app template which includes
-irrelevant apps (e.g. `admin`, `auth`, ... etc).
+Por favor, ignora los mensajes de error sobre migraciones no aplicadas al ejecutar el servidor. El proyecto se inicializa a partir de una plantilla de aplicación Django que incluye aplicaciones irrelevantes  (e.g. `admin`, `auth`, ... etc).
 
 ## Run tests
-To run the tests just run this command
+Para ejecutar las pruebas, simplemente ejecuta este comando:
 ```shell
 poetry run python manage.py test --noinput my_app.tests
 ```
